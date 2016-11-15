@@ -1,0 +1,39 @@
+{
+  "name": "data-collector",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.2",
+    "express": "~4.14.0",
+    "express-session": "^1.14.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.6.8",
+    "mongoose-auto-increment": "^5.0.1",
+    "morgan": "~1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "description": "Data Collector Api-Rest",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "vcamargo.e@gmail.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azrrael-exe/data-collector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Azrrael-exe/data-collector/issues"
+  },
+  "homepage": "https://github.com/Azrrael-exe/data-collector#readme"
+}

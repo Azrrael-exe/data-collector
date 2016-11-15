@@ -17,7 +17,9 @@ module.exports = {
         }
         else
         {
+          var decoded = jwt.decode(token, 'superSecret');
           req.decoded = decoded;
+          req.user = decoded._doc.local.email
           next();
         }
       });

@@ -12,10 +12,10 @@ var flash = require('connect-flash');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api');
-var survey = require('./routes/survey')
+var survey = require('./routes/survey');
 
 var mongoose = require('mongoose');
-var dbconfig = require('./config/db.js')
+var dbconfig = require('./config/db.js');
 
 mongoose.connect(dbconfig.url);
 
@@ -31,6 +31,11 @@ app.use(flash());
 
 require('./config/passport.js')(passport);                // pass passport for configuration
 
+
+var mongo_express = require('mongo-express/lib/middleware');
+var mongo_express_config = require('./config/mongo_express');
+
+app.use('/mongo_express', mongo_express(mongo_express_config))
 
 // view engine setup
 app.set('view engine', 'ejs');                              // set up ejs for templating

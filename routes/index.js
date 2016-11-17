@@ -10,8 +10,17 @@ var router = express.Router();
 // });
 
 // ==== MAIN ====
+
 router.get('/', function(req, res) {
-    res.render('index.ejs'); // load the index.ejs file
+    res.render('/index.html'); // load the index.ejs file
+});
+
+router.get('/contact', function(req, res) {
+    res.redirect('/contact.html'); // load the index.ejs file
+});
+
+router.get('/about', function(req, res) {
+    res.redirect('/about.html'); // load the index.ejs file
 });
 
 // === Login ====

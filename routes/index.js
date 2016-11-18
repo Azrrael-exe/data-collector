@@ -6,7 +6,7 @@ var router = express.Router();
 // ==== MAIN ====
 
 router.get('/', function(req, res) {
-    res.render('/index.html'); // load the index.ejs file
+    res.render('index.ejs'); // load the index.ejs file
 });
 
 router.get('/contact', function(req, res) {
@@ -24,7 +24,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/profile', // redirect to the secure profile section
+    successRedirect : '/dashboard.html', // redirect to the secure profile section
     failureRedirect : '/login', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }
@@ -36,11 +36,17 @@ router.get('/signup', function(req, res) {
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/profile', // redirect to the secure profile section
+    successRedirect : '/dash', // redirect to the secure profile section
     failureRedirect : '/signup', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   })
 );
+
+// === Dashboard ===
+
+router.get('/dash', auth.isLoggedIn, function(req, res) {
+  res.render('dash.ejs');
+});
 
 // ==== PROFILE SECTION ====
 router.get('/profile', auth.isLoggedIn, function(req, res) {

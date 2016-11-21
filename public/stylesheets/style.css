@@ -26,7 +26,8 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
+  margin-top: 10px;
+  padding-top: 15px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
@@ -90,6 +91,41 @@ body {
 
 .login .alert {
   text-align: center;
+}
+
+.dash-head {
+  padding: inherit;
+}
+.dash-head h1{
+  text-align: right;
+  color: grey;
+}
+
+.modules{
+  padding: inherit;
+}
+
+.modules .row{
+  padding: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.modules h3 {
+  color: grey;
+}
+.modules .well {
+  border-radius: 20;
+  background: rgb(22, 105, 173);
+  height: 60px;
+  margin: 10px;
+  color: white;
+  padding: 5px;
+}
+
+.modules .row p.tittle{
+  padding-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  color:white;
 }
 
 /* Responsive: Portrait tablets and up */

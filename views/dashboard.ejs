@@ -1,0 +1,94 @@
+<!-- views/dashboard.ejs -->
+<!doctype html>
+<html>
+
+<head>
+	<title># data-collector-Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+
+		<div class="container">
+
+			<div class="header clearfix">
+				<nav>
+					<ul class="nav nav-pills pull-right">
+						<li role="presentation" class="active"><a href="/">Home</a></li>
+						<li role="presentation"><a href="/about">About</a></li>
+						<li role="presentation"><a href="/contact">Contact</a></li>
+						<li class="dropdown" role="presentation">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"> User
+								<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="/profile">Profile</a></li>
+									<li><a href="/logout">Logout</a></li>
+								</ul>
+							</li>
+					</ul>
+				</nav>
+				<h3 class="text-muted">#data-collector</h3>
+			</div>
+
+			<div class="dash-head">
+				<div class="row">
+						<h1 align:"left"> <%= user.local.email.split('@')[0] %> </h1>
+					</div>
+				</div>
+
+			<div class="modules">
+
+				<div class="row">
+					<h3 aling="left"> Modules: </h3>
+				</div>
+
+				<div class="row">
+
+					<div class="col-sm-4">
+						<div class="well">
+							<a href="/competitivity">
+								<p class="tittle">
+									<i class="fa fa-globe" aria-hidden="true"></i> Local Competitivity
+								</p>
+							</a>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="well">
+							<a href="/competitivity/">
+								<p class="tittle">
+									<i class="fa fa-gear" aria-hidden="true"></i> To Do!
+								</p>
+							</a>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="well">
+							<a href="/competitivity">
+								<p class="tittle">
+									<i class="fa fa-gear" aria-hidden="true"></i> To Do!
+								</p>
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<footer class="footer">
+				<p>&copy; 2016 Company, Inc.</p>
+			</footer>
+
+	</div>
+</body>
+
+</html>

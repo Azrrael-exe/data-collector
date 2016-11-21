@@ -24,7 +24,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/dashboard.html', // redirect to the secure profile section
+    successRedirect : '/dashboard', // redirect to the secure profile section
     failureRedirect : '/login', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }
@@ -36,7 +36,7 @@ router.get('/signup', function(req, res) {
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/dash', // redirect to the secure profile section
+    successRedirect : '/dashboard', // redirect to the secure profile section
     failureRedirect : '/signup', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   })
@@ -44,8 +44,11 @@ router.post('/signup', passport.authenticate('local-signup', {
 
 // === Dashboard ===
 
-router.get('/dash', auth.isLoggedIn, function(req, res) {
-  res.render('dash.ejs');
+router.get('/dashboard', auth.isLoggedIn, function(req, res) {
+  res.render('dashboard.ejs', {
+    user : req.user,
+    message: req.flash('loginMessage')
+  });
 });
 
 // ==== PROFILE SECTION ====

@@ -11,7 +11,6 @@ var flash = require('connect-flash');
 
 var index = require('./routes/index');
 var api = require('./routes/api');
-
 var competitivity = require('./routes/modules/competitivity')
 
 var mongoose = require('mongoose');
@@ -33,10 +32,9 @@ app.use(flash());
 require('./config/passport.js')(passport);                // pass passport for configuration
 
 
-var mongo_express = require('mongo-express/lib/middleware');
-var mongo_express_config = require('./config/mongo_express');
-
-app.use('/mongo_express', mongo_express(mongo_express_config))
+// var mongo_express = require('mongo-express/lib/middleware');
+// var mongo_express_config = require('./config/mongo_express');
+// app.use('/mongo_express', mongo_express(mongo_express_config))
 
 // view engine setup
 app.set('view engine', 'ejs');                              // set up ejs for templating

@@ -5,10 +5,8 @@ var mongoose = require('mongoose');
 
 // define the schema for our user model
 var townSchema = mongoose.Schema({
-  basic:{
-    code: String,
-    name: String,
-  }
+  code: String,
+  name: String,
 });
 
 // methods ======================

@@ -6,15 +6,21 @@ var router = express.Router();
 // ==== MAIN ====
 
 router.get('/', function(req, res) {
-    res.render('app/index.ejs'); // load the index.ejs file
+    console.log(req.user);
+    if (req.user){
+      res.redirect('/dashboard')
+    }
+    else{
+      res.render('app/index.ejs');
+    }
 });
 
 router.get('/contact', function(req, res) {
-    res.render('app/contact.ejs'); // load the index.ejs file
+    res.render('app/contact.ejs', {user: req.user}); // load the index.ejs file
 });
 
 router.get('/about', function(req, res) {
-    res.render('app/about.ejs'); // load the index.ejs file
+    res.render('app/about.ejs', {user: req.user}); // load the index.ejs file
 });
 
 // === Login ====

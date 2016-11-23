@@ -11,10 +11,38 @@ router.post('/users', auth.verifyToken, function(req, res) {
   });
 });
 
-router.get('/users', function(req, res) {
-  User.find({}, function(err, users) {
-    res.json(users);
+router.get('/towns', function(req, res) {
+  Town.find({}, function(err, towns) {
+    res.json(towns);
   });
+});
+
+router.post('/add', function(req, res){
+  Object.keys(req.body).forEach(function(key){
+    console.log(key, req.body[key]);
+  })
+  if(req.body.town){
+    res.json({
+        message:"Todo bien, todo bonito",
+        status:"ok"
+    })}
+  else{
+    town = new Town({
+      name : req.body.name,
+      code : req.body.code,
+    })
+    town.save(function(err){
+      if(err) {
+        res.json({
+          message:err.message,
+          status:'error'
+        })}
+      else{
+        res.json({
+          message:'Town Created',
+          status: 'ok'
+      })}
+  })}
 });
 
 router.post('/auth', function(req, res){

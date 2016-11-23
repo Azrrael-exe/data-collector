@@ -68,9 +68,20 @@ body {
 }
 
 .about {
+  padding: inherit;
   font-size: 14px;
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
+}
+.about .row p{
+  padding: inherit;
+  color: grey;
+  text-align: justify;
+}
+.about .row h1{
+  padding: inherit;
+  text-align: left;
+  color: rgb(22, 105, 173);
 }
 
 /*.login input.form-control{
@@ -81,14 +92,12 @@ body {
   padding-bottom: 20px;
   padding-top: 20px;
 }
-
 .login .btn {
   padding: auto;
   font-size: 14px;
   width: 120px;
   height: 40px;
 }
-
 .login .alert {
   text-align: center;
 }
@@ -104,7 +113,6 @@ body {
 .modules{
   padding: inherit;
 }
-
 .modules .row{
   padding: 0;
   border-bottom: 1px solid #e5e5e5;
@@ -120,12 +128,22 @@ body {
   color: white;
   padding: 5px;
 }
-
 .modules .row p.tittle{
   padding-top: 15px;
   text-align: center;
   font-size: 16px;
   color:white;
+}
+.modules .nav-tab{
+  padding: inherit;
+}
+.modules h2 {
+  color: rgb(22, 105, 173);
+  text-align: left;
+}
+
+.modules .working-area {
+  color:grey;
 }
 
 /* Responsive: Portrait tablets and up */

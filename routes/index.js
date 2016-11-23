@@ -6,21 +6,21 @@ var router = express.Router();
 // ==== MAIN ====
 
 router.get('/', function(req, res) {
-    res.render('index.ejs'); // load the index.ejs file
+    res.render('app/index.ejs'); // load the index.ejs file
 });
 
 router.get('/contact', function(req, res) {
-    res.redirect('/contact.html'); // load the index.ejs file
+    res.render('app/contact.ejs'); // load the index.ejs file
 });
 
 router.get('/about', function(req, res) {
-    res.redirect('/about.html'); // load the index.ejs file
+    res.render('app/about.ejs'); // load the index.ejs file
 });
 
 // === Login ====
 
 router.get('/login', function(req, res) {
-    res.render('login.ejs', { message: req.flash('loginMessage') });
+    res.render('app/login.ejs', { message: req.flash('loginMessage') });
 });
 
 router.post('/login', passport.authenticate('local-login', {
@@ -32,7 +32,7 @@ router.post('/login', passport.authenticate('local-login', {
 
 // ==== Singup ====
 router.get('/signup', function(req, res) {
-    res.render('signup.ejs', { message: req.flash('signupMessage') });
+    res.render('app/signup.ejs', { message: req.flash('signupMessage') });
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
@@ -45,7 +45,7 @@ router.post('/signup', passport.authenticate('local-signup', {
 // === Dashboard ===
 
 router.get('/dashboard', auth.isLoggedIn, function(req, res) {
-  res.render('dashboard.ejs', {
+  res.render('app/dashboard.ejs', {
     user : req.user,
     message: req.flash('loginMessage')
   });
@@ -53,7 +53,7 @@ router.get('/dashboard', auth.isLoggedIn, function(req, res) {
 
 // ==== PROFILE SECTION ====
 router.get('/profile', auth.isLoggedIn, function(req, res) {
-    res.render('profile.ejs', {
+    res.render('app/profile.ejs', {
         user : req.user // get the user out of session and pass to template
     });
 });

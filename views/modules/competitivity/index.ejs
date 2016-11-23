@@ -1,4 +1,4 @@
-<!-- views/competitivity/index.ejs -->
+<!-- views/dashboard.ejs -->
 <!doctype html>
 <html>
 
@@ -10,7 +10,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 
 <body>
@@ -36,51 +36,22 @@
 				<h3 class="text-muted">#data-collector</h3>
 			</div>
 
-			<div class="dash-head">
-				<div class="row">
-						<h1 align:"left"> <%= user.local.email.split('@')[0] %> </h1>
-					</div>
-				</div>
-
 			<div class="modules">
 
 				<div class="row">
-					<h3 aling="left"> Modules: </h3>
+					<h2 aling="left"> Competitividad</h2>
+
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#">Descripción</a></li>
+						<li><a href="#">Cuestionario</a></li>
+						<li><a href="#">Resultados</a></li>
+					</ul>
 				</div>
 
-				<div class="row">
-
-					<div class="col-sm-4">
-						<div class="well">
-							<a href="/competitivity">
-								<p class="tittle">
-									<i class="fa fa-globe" aria-hidden="true"></i> Local Competitivity
-								</p>
-							</a>
-						</div>
-					</div>
-
-					<div class="col-sm-4">
-						<div class="well">
-							<a href="/competitivity/">
-								<p class="tittle">
-									<i class="fa fa-gear" aria-hidden="true"></i> To Do!
-								</p>
-							</a>
-						</div>
-					</div>
-
-					<div class="col-sm-4">
-						<div class="well">
-							<a href="/competitivity">
-								<p class="tittle">
-									<i class="fa fa-gear" aria-hidden="true"></i> To Do!
-								</p>
-							</a>
-						</div>
-					</div>
+				<div class="well">
 
 				</div>
+
 
 			</div>
 

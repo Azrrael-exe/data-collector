@@ -11,7 +11,9 @@ var flash = require('connect-flash');
 
 var index = require('./routes/index');
 var api = require('./routes/api');
-var competitivity = require('./routes/modules/competitivity')
+
+var competitivity = require('./routes/modules/competitivity/index');
+var competitivity_api = require('./routes/modules/competitivity/api');
 
 var mongoose = require('mongoose');
 var dbconfig = require('./config/db.js');
@@ -26,18 +28,19 @@ app.use(session({ secret: "Ovewatch",
     saveUninitialized: true,
     resave: true}));                  // session secret
 app.use(passport.initialize());
-app.use(passport.session());                                // persistent login sessions
+app.use(passport.session());                               // persistent login sessions
 app.use(flash());
 
 require('./config/passport.js')(passport);                // pass passport for configuration
-
 
 // var mongo_express = require('mongo-express/lib/middleware');
 // var mongo_express_config = require('./config/mongo_express');
 // app.use('/mongo_express', mongo_express(mongo_express_config))
 
+app.set('views', __dirname + '/views');
+
 // view engine setup
-app.set('view engine', 'ejs');                              // set up ejs for templating
+app.set('view engine', 'ejs');                           // set up ejs for templating
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -49,7 +52,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/api', api);
-app.use('/competitivity', competitivity)
+
+app.use('/competitivity', competitivity);
+app.use('/competitivity/api', competitivity_api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

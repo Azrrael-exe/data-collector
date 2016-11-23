@@ -113,20 +113,12 @@ body {
 .modules{
   padding: inherit;
 }
-.modules .row{
-  padding: 0;
-  border-bottom: 1px solid #e5e5e5;
-}
 .modules h3 {
   color: grey;
+  border-bottom: 1px solid #e5e5e5;
 }
-.modules .well {
-  border-radius: 20;
-  background: rgb(22, 105, 173);
-  height: 60px;
-  margin: 10px;
-  color: white;
-  padding: 5px;
+.modules .row {
+  margin-bottom: 20px;
 }
 .modules .row p.tittle{
   padding-top: 15px;
@@ -141,10 +133,15 @@ body {
   color: rgb(22, 105, 173);
   text-align: left;
 }
-
-.modules .working-area {
-  color:grey;
+.modules .well {
+  border-radius: 20;
+  background: rgb(22, 105, 173);
+  height: 60px;
+  margin: 10px;
+  color: white;
+  padding: 5px;
 }
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

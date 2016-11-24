@@ -6,12 +6,11 @@ var router = express.Router();
 // ==== MAIN ====
 
 router.get('/', function(req, res) {
-    console.log(req.user);
     if (req.user){
       res.redirect('/dashboard')
     }
     else{
-      res.render('app/index.ejs');
+      res.render('app/index.ejs',{user:req.user});
     }
 });
 
@@ -26,7 +25,10 @@ router.get('/about', function(req, res) {
 // === Login ====
 
 router.get('/login', function(req, res) {
-    res.render('app/login.ejs', { message: req.flash('loginMessage') });
+    res.render('app/login.ejs', {
+      user : req.user,
+      message: req.flash('loginMessage')
+    });
 });
 
 router.post('/login', passport.authenticate('local-login', {
@@ -38,7 +40,10 @@ router.post('/login', passport.authenticate('local-login', {
 
 // ==== Singup ====
 router.get('/signup', function(req, res) {
-    res.render('app/signup.ejs', { message: req.flash('signupMessage') });
+    res.render('app/signup.ejs', {
+      user : req.user,
+      message: req.flash('loginMessage')
+    });
 });
 
 router.post('/signup', passport.authenticate('local-signup', {

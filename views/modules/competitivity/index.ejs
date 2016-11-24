@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title># data-collector-Login</title>
+	<title># data-collector-Competitivity</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,24 +17,7 @@
 
 		<div class="container">
 
-			<div class="header clearfix">
-				<nav>
-					<ul class="nav nav-pills pull-right">
-						<li role="presentation" class="active"><a href="/">Home</a></li>
-						<li role="presentation"><a href="/about">About</a></li>
-						<li role="presentation"><a href="/contact">Contact</a></li>
-						<li class="dropdown" role="presentation">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#"> User
-								<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="/profile">Profile</a></li>
-									<li><a href="/logout">Logout</a></li>
-								</ul>
-							</li>
-					</ul>
-				</nav>
-				<h3 class="text-muted">#data-collector</h3>
-			</div>
+			<%- include('../../partials/navbar') %>
 
 			<div class="modules">
 
@@ -58,9 +41,7 @@
 
 			</div>
 
-			<footer class="footer">
-				<p>&copy; 2016 Company, Inc.</p>
-			</footer>
+			<%- include('../../partials/footer') %>
 
 	</div>
 </body>

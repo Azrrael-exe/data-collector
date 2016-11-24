@@ -3,7 +3,9 @@ var User = require('../../../models/user');
 var Town = require('../../../models/modules/competitivity/town');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
-var auth = require('../../../middleware/auth')
+var auth = require('../../../middleware/auth');
+
+var parameters = require('./info.js');
 
 router.post('/users', auth.verifyToken, function(req, res) {
   User.find({}, function(err, users) {
@@ -20,7 +22,8 @@ router.get('/towns', function(req, res) {
 router.post('/add', function(req, res){
   Object.keys(req.body).forEach(function(key){
     console.log(key, req.body[key]);
-  })
+  });
+
   if(req.body.town){
     res.json({
         message:"Todo bien, todo bonito",
@@ -31,6 +34,11 @@ router.post('/add', function(req, res){
       name : req.body.name,
       code : req.body.code,
     })
+    Object.keys(req.body).forEach(function(key){
+      data = {};
+      data[key] = req.body[key];
+      town.data.push(data);
+    });
     town.save(function(err){
       if(err) {
         res.json({
@@ -69,6 +77,11 @@ router.post('/auth', function(req, res){
          }
        }
   });
+});
+
+
+router.post('/parameters',  function(req, res){
+  res.send(parameters)
 });
 
 module.exports = router;

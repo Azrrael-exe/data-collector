@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var townSchema = mongoose.Schema({
   code: String,
   name: String,
+  data : []
 });
 
 // methods ======================

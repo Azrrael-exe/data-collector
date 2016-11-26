@@ -79,7 +79,6 @@ router.post('/auth', function(req, res){
   });
 });
 
-
 router.post('/parameters',  function(req, res){
   res.send(parameters)
 });

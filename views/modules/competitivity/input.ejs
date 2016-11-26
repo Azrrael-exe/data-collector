@@ -1,50 +1,14 @@
-<!-- views/dashboard.ejs -->
-<!doctype html>
-<html>
+<div id="input" class="working-tab">
 
-<head>
-	<title># data-collector-Input</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-	<link rel="stylesheet" href="../stylesheets/style.css">
-</head>
+	<form action="competitivity/api/add" method="post">
+		<% Object.keys(parameters).forEach(function(param) { %>
+				<%=parameters[param]%>:<br>
+				<input type="text" name='<%=param%>' value='<%=param%>' ><br>
+		<% }); %>
 
-<body>
+		<br><br>
+  	<input type="submit" value="Submit">
 
-		<div class="container">
+	</form>
 
-			<%- include('../../partials/navbar') %>
-
-			<div class="modules">
-
-				<div class="row">
-					<h2 aling="left"> Competitividad</h2>
-					<ul class="nav nav-tabs">
-						<li><a href="/competitivity/">Descripción</a></li>
-						<li class="active"><a href="/competitivity/input">Cuestionario</a></li>
-						<li><a href="/competitivity/results">Resultados</a></li>
-					</ul>
-				</div>
-
-				<div class="row">
-
-					<ul>
-					    <% Object.keys(parameters).forEach(function(param) { %>
-					        <li><%= param %> - <%= parameters[param] %></li>
-					    <% }); %>
-					</ul>
-
-				</div>
-
-			</div>
-
-			<%- include('../../partials/footer') %>
-
-	</div>
-</body>
-
-</html>
+</div>

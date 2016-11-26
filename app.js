@@ -38,7 +38,6 @@ require('./config/passport.js')(passport);                // pass passport for c
 // app.use('/mongo_express', mongo_express(mongo_express_config))
 
 app.set('views', __dirname + '/views');
-
 // view engine setup
 app.set('view engine', 'ejs');                           // set up ejs for templating
 

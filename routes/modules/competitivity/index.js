@@ -9,22 +9,32 @@ var parameters = require('./info.js');
 
 router.get('/', auth.isLoggedIn, function(req, res) {
     res.render('modules/competitivity/index',{
-      user:req.user,
-      parameters: parameters
+      user : req.user,
+      tab : "description"
     });
 });
 
-router.get('/input', auth.isLoggedIn, function(req, res) {
-    res.render('modules/competitivity/input',{
+router.get('/create', auth.isLoggedIn, function(req, res) {
+    res.render('modules/competitivity/index',{
       user:req.user,
-      parameters: parameters
+      parameters: parameters,
+      tab : 'create'
+    });
+});
+
+router.get('/edit', auth.isLoggedIn, function(req, res) {
+    res.render('modules/competitivity/index',{
+      user:req.user,
+      parameters: parameters,
+      tab : 'edit'
     });
 });
 
 router.get('/results', auth.isLoggedIn, function(req, res) {
-    res.render('modules/competitivity/results',{
+    res.render('modules/competitivity/index',{
       user:req.user,
-      parameters: parameters
+      parameters: parameters,
+      tab : 'results'
     });
 });
 

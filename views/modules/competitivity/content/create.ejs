@@ -1,0 +1,19 @@
+<div id="input" class="working-tab">
+
+  <h2>Create</h2>
+
+  <form action="competitivity/api/add" method="post">
+    <% Object.keys(parameters).forEach(function(param) { %>
+      <div class="well questions" id='<%=param%>'>
+        <h3><%=param%>:</h3><br>
+        <% Object.keys(parameters[param]).forEach(function(key) { %>
+            <%=parameters[param][key]%><br>
+            <input type="text" name='<%=key%>' value='<%=key%>' ><br>
+        <% }); %>
+      </div>
+    <% }); %>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+</div>

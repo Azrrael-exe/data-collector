@@ -133,14 +133,14 @@ body {
   color: rgb(22, 105, 173);
   text-align: left;
 }
-.modules .well {
+/*.modules .well {
   border-radius: 20;
   background: rgb(22, 105, 173);
-  height: 60px;
+  height: auto;
   margin: 10px;
   color: white;
   padding: 5px;
-}
+}*/
 
 
 /* Responsive: Portrait tablets and up */

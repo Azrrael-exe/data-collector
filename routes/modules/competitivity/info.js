@@ -1,5 +1,15 @@
 module.exports = {
-    deuda_publica : "Deuda publica",
-    numero_camas : "Numero de Camas",
-    escuelas : "Numero de escuelas"
+    Basica: {
+      nombre : "Nombre del Municipio",
+      codigo : "Codigo Dane"
+    },
+    Economia: {
+      deuda_publica : "Deuda publica",
+    },
+    Salud: {
+      numero_camas : "Numero de Camas",
+    },
+    Educacion:{
+      escuelas : "Numero de escuelas"
+    }
 }

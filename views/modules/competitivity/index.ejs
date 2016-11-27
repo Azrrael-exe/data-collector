@@ -11,12 +11,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
 	<link rel="stylesheet" href="../stylesheets/style.css">
-
-	<script src="../modules/competitivity/js/nav.js"></script>
-
 </head>
 
-<body onload="openTab('home')">
+<body>
 
 		<div class="container">
 
@@ -24,20 +21,25 @@
 
 			<div class="modules">
 
-				<div class="row">
-					<h2 aling="left"> Competitividad</h2>
-					<ul class="nav nav-tabs">
-						<li><a href="javascript:void(0)" onclick="openTab('home')" >Descripción</a></li>
-						<li><a href="javascript:void(0)" onclick="openTab('input')" >Cuestionario</a></li>
-						<li><a href="javascript:void(0)" onclick="openTab('result')" >Resultados</a></li>
-					</ul>
-				</div>
+				<%- include('./partials/navtab') %>
 
 				<div class="row">
 
-					<%- include('description') %>
-					<%- include('input') %>
-					<%- include('result') %>
+						<%if (tab === 'description') { %>
+							<%- include('./content/description') %>
+						<% } %>
+
+						<%if (tab === 'create') { %>
+							<%- include('./content/create') %>
+						<% } %>
+
+						<%if (tab === 'edit') { %>
+							<%- include('./content/edit') %>
+						<% } %>
+
+						<%if (tab === 'results') { %>
+							<%- include('./content/results') %>
+						<% } %>
 
 				</div>
 

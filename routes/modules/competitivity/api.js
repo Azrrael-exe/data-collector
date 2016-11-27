@@ -14,6 +14,13 @@ router.post('/users', auth.verifyToken, function(req, res) {
 });
 
 router.get('/towns', function(req, res) {
+  console.log(req);
+  Town.find({}, function(err, towns) {
+    res.json(towns);
+  });
+});
+
+router.post('/towns', function(req, res) {
   Town.find({}, function(err, towns) {
     res.json(towns);
   });

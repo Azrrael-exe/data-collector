@@ -1,4 +1,4 @@
 module.exports = {
   'secret': 'ForTheHorde',
-  'url': 'mongodb://localhost:27017/taxodata'
+  'url': 'mongodb://azrrael:Schrodinger@ds161487.mlab.com:61487/taxodata'
 }
